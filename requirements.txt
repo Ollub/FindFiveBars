@@ -1,0 +1,5 @@
+geopy==1.19.0
+flask==1.0.3
+flask-wtf==0.14.2
+folium==0.8.3
+yandex-geocoder==1.0.0

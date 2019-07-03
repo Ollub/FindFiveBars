@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+ {% block content %}
+    <h1>Hi, dear fread!</h1>
+    <form action="" method="post" novalidate>
+        <p>
+            {{ form.location.label }}<br>
+            {{ form.location(size=32) }}
+            {% for error in form.location.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    <h2>Let's find 5 bars near {{ location }}</h2>
+
+    {% include '_map.html' %}
+
+{% endblock %}
