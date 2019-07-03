@@ -5,4 +5,4 @@ from wtforms.validators import DataRequired
 
 class LocationForm(FlaskForm):
     location = StringField('Location', validators=[DataRequired()])
-    submit = SubmitField('Sign In')
+    # submit = SubmitField('Sign In')

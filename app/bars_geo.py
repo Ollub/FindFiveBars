@@ -15,9 +15,7 @@ def fetch_bars_geo(current_location):
     bars = read_json_file('app/data/bars_data.json', 'CP1251')
     bars_geo = []
     current_coordinates = convert_adress_to_coordinates(current_location)
-    for bar in bars[:10]:
+    for bar in bars:
         bar_geo = fetch_bar_geo(bar, current_coordinates)
         bars_geo.append(bar_geo)
     return sort_list_of_dicts(bars_geo)
-    
-    create_bar_map_template(current_coordinates, bars_geo[:5])
