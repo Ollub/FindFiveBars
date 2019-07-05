@@ -14,5 +14,5 @@ def index(location='Reutov'):
         bars_geo = fill_bars_geo(location)
         create_bars_map(location, bars_geo[:5])
     except:
-        flash('Yandex geocoder service unavailable')
+        flash('Something goes wrong')
     return render_template('index.html', title='Bars_map', location=location)

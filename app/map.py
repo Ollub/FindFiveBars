@@ -2,7 +2,7 @@ import folium
 from app.tools import convert_adress_to_coordinates
 
 
-def create_bars_map(current_location, bars_list, path='app/templates/_map.html'):
+def create_bars_map(current_location, bars_geo, path='app/templates/_map.html'):
     current_coordinates = convert_adress_to_coordinates(current_location)
 
     map = folium.Map(
@@ -16,7 +16,7 @@ def create_bars_map(current_location, bars_list, path='app/templates/_map.html')
     ).add_to(map)
 
     tooltip = "Let's drink!"
-    for bar in bars_list:
+    for bar in bars_geo:
         name = bar['title']
         folium.Marker(bar['coordinates'], popup=f'<i>{name}</i>', tooltip=tooltip).add_to(map)
     map.save(path)

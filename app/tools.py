@@ -3,7 +3,7 @@ from yandex_geocoder import Client
 from geopy import distance
 
 
-def read_json_file(file_path, encoding):
+def load_json_file(file_path, encoding):
     with open(file_path, 'r', encoding=encoding) as file:
         return json.load(file)
 
